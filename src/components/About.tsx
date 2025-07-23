@@ -37,11 +37,11 @@ const About = () => {
   ];
 
   const certifications = [
-    "AWS Solutions Architect Professional",
-    "Azure DevOps Engineer Expert",
-    "Kubernetes Administrator (CKA)",
-    "HashiCorp Terraform Associate",
-    "Docker Certified Associate"
+    "Microsoft Azure Fundamentals (AZ-900)",
+    "B.Sc Computer Science - In Progress",
+    "Full Stack Development - HackerU",
+    "Full Stack Development - Kernelios",
+    "IDF Technology & Maintenance Corps"
   ];
 
   return (
@@ -52,9 +52,9 @@ const About = () => {
             About Me
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            With over 5 years of experience in DevOps and Cloud Engineering, I specialize in building 
-            resilient, scalable infrastructure that empowers development teams to innovate faster while 
-            maintaining the highest standards of security and reliability.
+            Currently pursuing B.Sc in Computer Science while working as a Cloud DevOps Engineer at Vegvizer. 
+            Experienced in designing secure Azure infrastructure with Terraform, implementing CI/CD pipelines, 
+            and full-stack development. Strong background in teamwork, critical thinking, and Agile environments.
           </p>
         </div>
 

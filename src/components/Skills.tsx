@@ -7,45 +7,44 @@ const Skills = () => {
     {
       title: "Cloud Platforms",
       skills: [
-        { name: "Amazon Web Services (AWS)", level: 95 },
-        { name: "Microsoft Azure", level: 85 },
-        { name: "Google Cloud Platform", level: 75 }
+        { name: "Microsoft Azure", level: 90 },
+        { name: "Google Cloud Platform", level: 75 },
+        { name: "Azure DevOps", level: 85 }
       ]
     },
     {
       title: "Infrastructure & Orchestration",
       skills: [
-        { name: "Kubernetes", level: 90 },
-        { name: "Docker", level: 95 },
         { name: "Terraform", level: 90 },
-        { name: "Ansible", level: 85 }
+        { name: "Docker", level: 70 },
+        { name: "Azure CLI", level: 85 },
+        { name: "PowerShell", level: 80 }
       ]
     },
     {
       title: "CI/CD & Automation",
       skills: [
-        { name: "Jenkins", level: 88 },
-        { name: "GitLab CI/CD", level: 85 },
-        { name: "GitHub Actions", level: 90 },
-        { name: "ArgoCD", level: 80 }
+        { name: "Azure DevOps", level: 90 },
+        { name: "CI/CD Pipelines", level: 85 },
+        { name: "GitOps", level: 80 },
+        { name: "YAML", level: 85 }
       ]
     },
     {
-      title: "Monitoring & Observability",
+      title: "Development & Programming",
       skills: [
-        { name: "Prometheus", level: 85 },
-        { name: "Grafana", level: 85 },
-        { name: "ELK Stack", level: 80 },
-        { name: "Datadog", level: 75 }
+        { name: "React & TypeScript", level: 85 },
+        { name: "Node.js", level: 80 },
+        { name: "REST APIs", level: 85 },
+        { name: "C Programming", level: 75 }
       ]
     }
   ];
 
   const technologies = [
-    "AWS", "Azure", "GCP", "Kubernetes", "Docker", "Terraform", 
-    "Ansible", "Jenkins", "GitLab", "Python", "Bash", "Go",
-    "Prometheus", "Grafana", "ElasticSearch", "Redis", "PostgreSQL",
-    "Nginx", "Apache", "Linux", "Windows Server", "Helm", "ArgoCD"
+    "Azure", "GCP", "Terraform", "Azure DevOps", "Docker", "PowerShell", 
+    "Azure CLI", "YAML", "GitOps", "Node.js", "React", "TypeScript",
+    "JavaScript", "C", "REST APIs", "Git", "Figma", "Agile"
   ];
 
   return (

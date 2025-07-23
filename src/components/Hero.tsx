@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
-import profileAvatar from "@/assets/profile-avatar.jpg";
+import profileAvatar from "@/assets/tomer-profile.jpg";
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="mb-8 animate-scale-in">
             <img 
               src={profileAvatar}
-              alt="Tomer - DevOps Engineer"
+              alt="Tomer Raz - Cloud DevOps Engineer"
               className="w-32 h-32 rounded-full mx-auto border-4 border-primary shadow-primary animate-float"
             />
           </div>
@@ -35,7 +35,7 @@ const Hero = () => {
           {/* Name and Title */}
           <div className="mb-8 space-y-4 animate-slide-up">
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Tomer
+              Tomer Raz
             </h1>
             <div className="flex flex-wrap justify-center gap-4 mb-6">
               <Badge variant="secondary" className="text-lg px-4 py-2">
@@ -49,8 +49,8 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
-            Passionate about building scalable cloud infrastructure, automating deployments, 
-            and enabling teams to deliver software faster and more reliably.
+            Azure-certified Cloud DevOps Engineer with expertise in Infrastructure as Code, 
+            CI/CD pipelines, and full-stack development. Passionate about automation and scalable cloud solutions.
           </p>
 
           {/* CTA Buttons */}
