@@ -1,0 +1,93 @@
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import heroBackground from "@/assets/hero-bg.jpg";
+import profileAvatar from "@/assets/profile-avatar.jpg";
+
+const Hero = () => {
+  const scrollToAbout = () => {
+    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section 
+      className="min-h-screen relative flex items-center justify-center bg-gradient-hero"
+      style={{
+        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url(${heroBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center max-w-4xl mx-auto">
+          {/* Profile Avatar */}
+          <div className="mb-8 animate-scale-in">
+            <img 
+              src={profileAvatar}
+              alt="Tomer - DevOps Engineer"
+              className="w-32 h-32 rounded-full mx-auto border-4 border-primary shadow-primary animate-float"
+            />
+          </div>
+
+          {/* Name and Title */}
+          <div className="mb-8 space-y-4 animate-slide-up">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              Tomer
+            </h1>
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              <Badge variant="secondary" className="text-lg px-4 py-2">
+                Cloud DevOps Engineer
+              </Badge>
+              <Badge variant="outline" className="text-lg px-4 py-2">
+                Infrastructure Architect
+              </Badge>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
+            Passionate about building scalable cloud infrastructure, automating deployments, 
+            and enabling teams to deliver software faster and more reliably.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up">
+            <Button variant="hero" size="lg" className="group">
+              View My Work
+              <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
+            </Button>
+            <Button variant="outline" size="lg">
+              Download Resume
+            </Button>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 animate-slide-up">
+            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform">
+              <Github className="h-6 w-6" />
+            </Button>
+            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform">
+              <Linkedin className="h-6 w-6" />
+            </Button>
+            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform">
+              <Mail className="h-6 w-6" />
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <button 
+        onClick={scrollToAbout}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
+      >
+        <ArrowDown className="h-8 w-8" />
+      </button>
+    </section>
+  );
+};
+
+export default Hero;
