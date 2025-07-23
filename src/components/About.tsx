@@ -40,8 +40,7 @@ const About = () => {
     "Microsoft Azure Fundamentals (AZ-900)",
     "B.Sc Computer Science - In Progress",
     "Full Stack Development - HackerU",
-    "Full Stack Development - Kernelios",
-    "IDF Technology & Maintenance Corps"
+    "Full Stack Development - Kernelios"
   ];
 
   return (

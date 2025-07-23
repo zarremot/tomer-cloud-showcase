@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -22,37 +22,15 @@ const Contact = () => {
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Tel Aviv, Israel",
       link: null
     }
   ];
 
-  const socialLinks = [
-    { icon: Github, label: "GitHub", url: "https://github.com/tomer-devops" },
-    { icon: Linkedin, label: "LinkedIn", url: "https://linkedin.com/in/tomer-devops" },
-    { icon: Twitter, label: "Twitter", url: "https://twitter.com/tomer_devops" }
-  ];
-
-  const availability = [
-    "Full-time positions",
-    "Contract opportunities", 
-    "Consulting projects",
-    "Speaking engagements"
-  ];
 
   return (
     <section className="py-20 bg-secondary/20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-            Let's Connect
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to discuss your next cloud infrastructure project or DevOps transformation? 
-            I'd love to hear from you.
-          </p>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <Card className="bg-card border-border shadow-card">
@@ -134,39 +112,16 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4">
-                  {socialLinks.map((social, index) => (
-                    <Button 
-                      key={index}
-                      variant="outline" 
-                      size="icon"
-                      className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
-                      asChild
-                    >
-                      <a href={social.url} target="_blank" rel="noopener noreferrer">
-                        <social.icon className="h-5 w-5" />
-                      </a>
-                    </Button>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Availability */}
-            <Card className="bg-card border-border">
-              <CardHeader>
-                <CardTitle className="text-xl">Currently Available For</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {availability.map((item, index) => (
-                    <Badge 
-                      key={index}
-                      variant="secondary"
-                      className="px-3 py-1"
-                    >
-                      {item}
-                    </Badge>
-                  ))}
+                  <Button 
+                    variant="outline" 
+                    size="icon"
+                    className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                    asChild
+                  >
+                    <a href="https://www.linkedin.com/in/tomer-raz/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

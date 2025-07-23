@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Linkedin } from "lucide-react";
 import heroBackground from "@/assets/hero-bg.jpg";
 import profileAvatar from "@/assets/tomer-profile.jpg";
 
@@ -41,9 +41,6 @@ const Hero = () => {
               <Badge variant="secondary" className="text-lg px-4 py-2">
                 Cloud DevOps Engineer
               </Badge>
-              <Badge variant="outline" className="text-lg px-4 py-2">
-                Infrastructure Architect
-              </Badge>
             </div>
           </div>
 
@@ -59,21 +56,14 @@ const Hero = () => {
               View My Work
               <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg">
-              Download Resume
-            </Button>
           </div>
 
           {/* Social Links */}
           <div className="flex justify-center gap-6 animate-slide-up">
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform">
-              <Github className="h-6 w-6" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform">
-              <Linkedin className="h-6 w-6" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform">
-              <Mail className="h-6 w-6" />
+            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform" asChild>
+              <a href="https://www.linkedin.com/in/tomer-raz/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-6 w-6" />
+              </a>
             </Button>
           </div>
         </div>

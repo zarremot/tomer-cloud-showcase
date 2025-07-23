@@ -24,7 +24,6 @@ const Navigation = () => {
     { label: "Home", href: "hero" },
     { label: "About", href: "about" },
     { label: "Skills", href: "skills" },
-    { label: "Projects", href: "projects" },
     { label: "Contact", href: "contact" }
   ];
 
@@ -37,15 +36,7 @@ const Navigation = () => {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <button 
-            onClick={() => scrollToSection('hero')}
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:scale-105 transition-transform"
-          >
-            Tomer.dev
-          </button>
-
+        <div className="flex items-center justify-center h-16">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -57,9 +48,6 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
-            <Button variant="hero" size="sm">
-              Hire Me
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -90,9 +78,6 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
-              <Button variant="hero" size="sm" className="mt-4 self-start">
-                Hire Me
-              </Button>
             </div>
           </div>
         )}
