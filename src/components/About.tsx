@@ -7,17 +7,17 @@ const About = () => {
     {
       icon: Cloud,
       title: "Cloud Architecture",
-      description: "Designing and implementing scalable cloud solutions on AWS, Azure, and GCP"
+      description: "Designing and implementing scalable cloud solutions primarily on Azure, with additional experience in GCP"
     },
     {
       icon: Server,
       title: "Infrastructure as Code",
-      description: "Terraform, CloudFormation, and Ansible for automated infrastructure management"
+      description: "Terraform and Pulumi for automated infrastructure management and deployment"
     },
     {
       icon: GitBranch,
       title: "CI/CD Pipelines",
-      description: "Building robust deployment pipelines with Jenkins, GitLab CI, and GitHub Actions"
+      description: "Building robust deployment pipelines with Azure DevOps and GitHub Actions"
     },
     {
       icon: Shield,
@@ -37,8 +37,8 @@ const About = () => {
   ];
 
   const certifications = [
-    "Microsoft Azure Fundamentals (AZ-900)",
     "B.Sc Computer Science - In Progress",
+    "Microsoft Azure Fundamentals (AZ-900)",
     "Full Stack Development - HackerU",
     "Full Stack Development - Kernelios"
   ];

@@ -11,15 +11,43 @@ const Hero = () => {
 
   return (
     <section 
-      className="min-h-screen relative flex items-center justify-center bg-gradient-hero"
+      className="min-h-screen relative flex items-center justify-center bg-gradient-hero overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url(${heroBackground})`,
+        backgroundImage: `linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.7)), url(${heroBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+      {/* Interactive floating particles */}
+      <div className="absolute inset-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-2 h-2 bg-primary/30 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 6}s`,
+              animationDuration: `${4 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Interactive grid overlay */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="grid grid-cols-12 grid-rows-12 h-full w-full">
+          {[...Array(144)].map((_, i) => (
+            <div
+              key={i}
+              className="border border-primary/20 hover:bg-primary/10 transition-all duration-500 hover:border-primary/40"
+            />
+          ))}
+        </div>
+      </div>
+      
+      <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
@@ -51,19 +79,10 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-slide-up">
+          <div className="flex justify-center mb-12 animate-slide-up">
             <Button variant="hero" size="lg" className="group">
               View My Work
               <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
-            </Button>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center gap-6 animate-slide-up">
-            <Button variant="ghost" size="icon" className="hover:scale-110 transition-transform" asChild>
-              <a href="https://www.linkedin.com/in/tomer-raz/" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-6 w-6" />
-              </a>
             </Button>
           </div>
         </div>

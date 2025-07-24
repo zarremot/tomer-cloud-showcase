@@ -14,7 +14,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Github, label: "GitHub", url: "https://github.com/tomer-devops" },
     { icon: Linkedin, label: "LinkedIn", url: "https://linkedin.com/in/tomer-devops" },
-    { icon: Mail, label: "Email", url: "mailto:tomer@devops.engineer" }
+    { icon: Mail, label: "Email", url: "mailto:tomerraz29@gmail.com" }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -71,9 +71,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Get In Touch</h4>
             <div className="space-y-2 text-muted-foreground">
-              <p>tomer@devops.engineer</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>tomerraz29@gmail.com</p>
+              <p>Tel Aviv, Israel</p>
             </div>
             <Button variant="hero" className="mt-4">
               Let's Talk

@@ -48,7 +48,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary/20">
+    <section className="py-20 bg-secondary/20 overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
@@ -59,45 +59,39 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* Skill Categories */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-card border-border hover:shadow-card transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-center">{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress 
-                      value={skill.level} 
-                      className="h-2"
-                    />
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Technology Tags */}
-        <div className="text-center">
-          <h3 className="text-2xl font-bold mb-8">Technologies & Tools</h3>
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {technologies.map((tech, index) => (
+        {/* Animated Technology Carousel */}
+        <div className="relative">
+          <h3 className="text-2xl font-bold mb-8 text-center">Technologies & Tools</h3>
+          
+          {/* First Row - Moving Right */}
+          <div className="flex animate-[scroll-right_30s_linear_infinite] gap-4 mb-4 whitespace-nowrap">
+            {[...technologies, ...technologies].map((tech, index) => (
               <Badge 
-                key={index}
+                key={`row1-${index}`}
                 variant="outline" 
-                className="px-4 py-2 text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default"
+                className="px-6 py-3 text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-card/50 border-primary/20 hover:shadow-primary/20 hover:scale-105 flex-shrink-0"
               >
                 {tech}
               </Badge>
             ))}
           </div>
+
+          {/* Second Row - Moving Left */}
+          <div className="flex animate-[scroll-left_25s_linear_infinite] gap-4 whitespace-nowrap">
+            {[...technologies.slice().reverse(), ...technologies.slice().reverse()].map((tech, index) => (
+              <Badge 
+                key={`row2-${index}`}
+                variant="secondary" 
+                className="px-6 py-3 text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-secondary/50 border-accent/20 hover:shadow-accent/20 hover:scale-105 flex-shrink-0"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
+
+          {/* Gradient overlays for smooth edges */}
+          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-secondary/20 to-transparent pointer-events-none z-10"></div>
+          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-secondary/20 to-transparent pointer-events-none z-10"></div>
         </div>
       </div>
     </section>

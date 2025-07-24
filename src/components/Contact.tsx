@@ -10,14 +10,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "tomer@devops.engineer",
-      link: "mailto:tomer@devops.engineer"
-    },
-    {
-      icon: Phone,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "tomerraz29@gmail.com",
+      link: "mailto:tomerraz29@gmail.com"
     },
     {
       icon: MapPin,
@@ -31,49 +25,7 @@ const Contact = () => {
   return (
     <section className="py-20 bg-secondary/20">
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <Card className="bg-card border-border shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl">Send a Message</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">First Name</label>
-                  <Input placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Last Name</label>
-                  <Input placeholder="Doe" />
-                </div>
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Email</label>
-                <Input type="email" placeholder="john@example.com" />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Subject</label>
-                <Input placeholder="Project discussion" />
-              </div>
-              
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Message</label>
-                <Textarea 
-                  placeholder="Tell me about your project or requirements..."
-                  className="min-h-[120px]"
-                />
-              </div>
-              
-              <Button variant="hero" className="w-full">
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
-              </Button>
-            </CardContent>
-          </Card>
-
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
@@ -106,46 +58,38 @@ const Contact = () => {
             </Card>
 
             {/* Social Links */}
-            <Card className="bg-card border-border">
-              <CardHeader>
-                <CardTitle className="text-xl">Follow Me</CardTitle>
+            <Card className="bg-gradient-primary text-primary-foreground border-0 overflow-hidden relative">
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/30 animate-pulse"></div>
+                {[...Array(6)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-3 h-3 bg-white/20 rounded-full animate-float"
+                    style={{
+                      left: `${20 + Math.random() * 60}%`,
+                      top: `${20 + Math.random() * 60}%`,
+                      animationDelay: `${Math.random() * 3}s`,
+                      animationDuration: `${3 + Math.random() * 2}s`
+                    }}
+                  />
+                ))}
+              </div>
+              <CardHeader className="relative z-10">
+                <CardTitle className="text-xl text-center">Connect With Me</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="flex gap-4">
+              <CardContent className="relative z-10">
+                <div className="flex justify-center gap-4">
                   <Button 
-                    variant="outline" 
-                    size="icon"
-                    className="hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300"
+                    variant="secondary" 
+                    size="lg"
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-white/30 text-white hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
                     asChild
                   >
-                    <a href="https://www.linkedin.com/in/tomer-raz/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/tomer-raz/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                       <Linkedin className="h-5 w-5" />
+                      LinkedIn
                     </a>
                   </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Stats */}
-            <Card className="bg-gradient-primary text-primary-foreground border-0">
-              <CardContent className="pt-6">
-                <div className="grid grid-cols-2 gap-4 text-center">
-                  <div>
-                    <div className="text-2xl font-bold">5+</div>
-                    <div className="text-sm opacity-90">Years Experience</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">50+</div>
-                    <div className="text-sm opacity-90">Projects Completed</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">99.9%</div>
-                    <div className="text-sm opacity-90">Uptime Achieved</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold">24/7</div>
-                    <div className="text-sm opacity-90">Response Time</div>
-                  </div>
                 </div>
               </CardContent>
             </Card>
