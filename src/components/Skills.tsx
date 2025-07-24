@@ -1,6 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { 
+  Cloud, 
+  Globe, 
+  Settings, 
+  Terminal, 
+  Container, 
+  Code, 
+  GitBranch, 
+  FileCode, 
+  Database,
+  Palette,
+  Users,
+  Zap
+} from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
@@ -42,9 +56,24 @@ const Skills = () => {
   ];
 
   const technologies = [
-    "Azure", "GCP", "Terraform", "Azure DevOps", "Docker", "PowerShell", 
-    "Azure CLI", "YAML", "GitOps", "Node.js", "React", "TypeScript",
-    "JavaScript", "C", "REST APIs", "Git", "Figma", "Agile"
+    { name: "Azure", icon: Cloud },
+    { name: "GCP", icon: Globe },
+    { name: "Terraform", icon: Settings },
+    { name: "Azure DevOps", icon: GitBranch },
+    { name: "Docker", icon: Container },
+    { name: "PowerShell", icon: Terminal },
+    { name: "Azure CLI", icon: Terminal },
+    { name: "YAML", icon: FileCode },
+    { name: "GitOps", icon: GitBranch },
+    { name: "Node.js", icon: Zap },
+    { name: "React", icon: Code },
+    { name: "TypeScript", icon: Code },
+    { name: "JavaScript", icon: Code },
+    { name: "C", icon: Code },
+    { name: "REST APIs", icon: Database },
+    { name: "Git", icon: GitBranch },
+    { name: "Figma", icon: Palette },
+    { name: "Agile", icon: Users }
   ];
 
   return (
@@ -61,32 +90,38 @@ const Skills = () => {
 
         {/* Animated Technology Carousel */}
         <div className="relative">
-          <h3 className="text-2xl font-bold mb-8 text-center">Technologies & Tools</h3>
-          
           {/* First Row - Moving Right */}
-          <div className="flex animate-[scroll-right_30s_linear_infinite] gap-4 mb-4 whitespace-nowrap">
-            {[...technologies, ...technologies].map((tech, index) => (
-              <Badge 
-                key={`row1-${index}`}
-                variant="outline" 
-                className="px-6 py-3 text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-card/50 border-primary/20 hover:shadow-primary/20 hover:scale-105 flex-shrink-0"
-              >
-                {tech}
-              </Badge>
-            ))}
+          <div className="flex animate-[scroll-right_45s_linear_infinite] gap-4 mb-4 whitespace-nowrap">
+            {[...technologies, ...technologies].map((tech, index) => {
+              const IconComponent = tech.icon;
+              return (
+                <Badge 
+                  key={`row1-${index}`}
+                  variant="outline" 
+                  className="px-6 py-3 text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-card/50 border-primary/20 hover:shadow-primary/20 hover:scale-105 flex-shrink-0 flex items-center gap-2"
+                >
+                  <IconComponent className="h-4 w-4" />
+                  {tech.name}
+                </Badge>
+              );
+            })}
           </div>
 
           {/* Second Row - Moving Left */}
-          <div className="flex animate-[scroll-left_25s_linear_infinite] gap-4 whitespace-nowrap">
-            {[...technologies.slice().reverse(), ...technologies.slice().reverse()].map((tech, index) => (
-              <Badge 
-                key={`row2-${index}`}
-                variant="secondary" 
-                className="px-6 py-3 text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-secondary/50 border-accent/20 hover:shadow-accent/20 hover:scale-105 flex-shrink-0"
-              >
-                {tech}
-              </Badge>
-            ))}
+          <div className="flex animate-[scroll-left_40s_linear_infinite] gap-4 whitespace-nowrap">
+            {[...technologies.slice().reverse(), ...technologies.slice().reverse()].map((tech, index) => {
+              const IconComponent = tech.icon;
+              return (
+                <Badge 
+                  key={`row2-${index}`}
+                  variant="secondary" 
+                  className="px-6 py-3 text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-secondary/50 border-accent/20 hover:shadow-accent/20 hover:scale-105 flex-shrink-0 flex items-center gap-2"
+                >
+                  <IconComponent className="h-4 w-4" />
+                  {tech.name}
+                </Badge>
+              );
+            })}
           </div>
 
           {/* Gradient overlays for smooth edges */}

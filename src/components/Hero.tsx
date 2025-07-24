@@ -80,21 +80,13 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex justify-center mb-12 animate-slide-up">
-            <Button variant="hero" size="lg" className="group">
+            <Button variant="hero" size="lg" className="group" onClick={scrollToAbout}>
               View My Work
               <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
             </Button>
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <button 
-        onClick={scrollToAbout}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground hover:text-primary transition-colors animate-bounce"
-      >
-        <ArrowDown className="h-8 w-8" />
-      </button>
     </section>
   );
 };

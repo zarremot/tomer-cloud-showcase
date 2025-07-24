@@ -24,11 +24,11 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Tomer.dev
+              Tomer Raz
             </h3>
             <p className="text-muted-foreground leading-relaxed">
               Cloud DevOps Engineer passionate about building scalable infrastructure 
@@ -66,27 +66,12 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          {/* Contact Info */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Get In Touch</h4>
-            <div className="space-y-2 text-muted-foreground">
-              <p>tomerraz29@gmail.com</p>
-              <p>Tel Aviv, Israel</p>
-            </div>
-            <Button variant="hero" className="mt-4">
-              Let's Talk
-            </Button>
-          </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © {currentYear} Tomer. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm flex items-center gap-2">
-            Built with <Heart className="h-4 w-4 text-red-500" /> using React & Tailwind CSS
+        <div className="border-t border-border mt-12 pt-8">
+          <p className="text-muted-foreground text-sm text-center">
+            © {currentYear} Tomer Raz. All rights reserved.
           </p>
         </div>
       </div>
