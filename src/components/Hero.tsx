@@ -73,7 +73,7 @@ const Hero = () => {
           </div>
 
           {/* Description */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up">
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up bg-gradient-to-r from-white via-gray-300 to-gray-400 bg-clip-text text-transparent">
             Azure-certified Cloud DevOps Engineer with expertise in Infrastructure as Code, 
             CI/CD pipelines, and full-stack development. Passionate about automation and scalable cloud solutions.
           </p>
