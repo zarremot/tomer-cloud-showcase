@@ -17,9 +17,10 @@ import {
 } from "lucide-react";
 
 // Import real logos
-import terraformLogo from "@/assets/logos/terraform.svg";
+import terraformLogo from "@/assets/logos/terraform-fixed.svg";
 import gcpLogo from "@/assets/logos/gcp.svg";
 import gitLogo from "@/assets/logos/git.svg";
+import gitAltLogo from "@/assets/logos/git-alt.svg";
 import dockerLogo from "@/assets/logos/docker.svg";
 import nodejsLogo from "@/assets/logos/nodejs.svg";
 import reactLogo from "@/assets/logos/react.svg";
@@ -27,6 +28,11 @@ import typescriptLogo from "@/assets/logos/typescript.svg";
 import javascriptLogo from "@/assets/logos/javascript.svg";
 import figmaLogo from "@/assets/logos/figma.svg";
 import azureLogo from "@/assets/logos/azure.svg";
+import powershellLogo from "@/assets/logos/powershell.png";
+import azureDevopsLogo from "@/assets/logos/azure-devops.svg";
+import yamlLogo from "@/assets/logos/yaml.svg";
+import azureCliLogo from "@/assets/logos/azure-cli.png";
+import cLangLogo from "@/assets/logos/c-lang.svg";
 
 const Skills = () => {
   const skillCategories = [
@@ -71,17 +77,17 @@ const Skills = () => {
     { name: "Azure", logo: azureLogo, icon: Cloud },
     { name: "GCP", logo: gcpLogo, icon: Globe },
     { name: "Terraform", logo: terraformLogo, icon: Settings },
-    { name: "Azure DevOps", icon: GitBranch },
+    { name: "Azure DevOps", logo: azureDevopsLogo, icon: GitBranch },
     { name: "Docker", logo: dockerLogo, icon: Container },
-    { name: "PowerShell", icon: Terminal },
-    { name: "Azure CLI", icon: Terminal },
-    { name: "YAML", icon: FileCode },
-    { name: "GitOps", icon: GitBranch },
+    { name: "PowerShell", logo: powershellLogo, icon: Terminal },
+    { name: "Azure CLI", logo: azureCliLogo, icon: Terminal },
+    { name: "YAML", logo: yamlLogo, icon: FileCode },
+    { name: "GitOps", logo: gitAltLogo, icon: GitBranch },
     { name: "Node.js", logo: nodejsLogo, icon: Zap },
     { name: "React", logo: reactLogo, icon: Code },
     { name: "TypeScript", logo: typescriptLogo, icon: Code },
     { name: "JavaScript", logo: javascriptLogo, icon: Code },
-    { name: "C", icon: Code },
+    { name: "C", logo: cLangLogo, icon: Code },
     { name: "REST APIs", icon: Database },
     { name: "Git", logo: gitLogo, icon: GitBranch },
     { name: "Figma", logo: figmaLogo, icon: Palette },

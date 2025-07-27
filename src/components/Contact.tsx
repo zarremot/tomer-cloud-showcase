@@ -6,24 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, Linkedin } from "lucide-react";
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "tomerraz29@gmail.com",
-      link: "mailto:tomerraz29@gmail.com"
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "Connect on LinkedIn",
-      link: "https://www.linkedin.com/in/tomer-raz/"
-    }
-  ];
 
 
   return (
-    <section className="py-20 bg-secondary/20">
+    <section className="py-12 bg-secondary/20">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           {/* Merged Contact Information & Social Links */}
@@ -46,28 +32,10 @@ const Contact = () => {
             <CardHeader className="relative z-10">
               <CardTitle className="text-2xl text-center">Get In Touch</CardTitle>
             </CardHeader>
-            <CardContent className="relative z-10 space-y-8">
-              {/* Contact Information */}
-              <div className="flex justify-center gap-8">
-                {contactInfo.map((info, index) => (
-                  <Button 
-                    key={index}
-                    variant="secondary" 
-                    size="lg"
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-white/30 text-white hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                    asChild
-                  >
-                    <a 
-                      href={info.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="flex items-center gap-2"
-                    >
-                      <info.icon className="h-5 w-5" />
-                      {info.value}
-                    </a>
-                  </Button>
-                ))}
+            <CardContent className="relative z-10 text-center">
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <Mail className="h-6 w-6 text-white" />
+                <span className="text-xl font-medium text-white">tomerraz29@gmail.com</span>
               </div>
             </CardContent>
           </Card>
