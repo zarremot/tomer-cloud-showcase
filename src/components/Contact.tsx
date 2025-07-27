@@ -33,9 +33,20 @@ const Contact = () => {
               <CardTitle className="text-2xl text-center">Get In Touch</CardTitle>
             </CardHeader>
             <CardContent className="relative z-10 text-center">
-              <div className="flex items-center justify-center gap-3 mb-6">
-                <Mail className="h-6 w-6 text-white" />
-                <span className="text-xl font-medium text-white">tomerraz29@gmail.com</span>
+              <div className="flex flex-col items-center justify-center gap-4 mb-6">
+                <div className="flex items-center gap-3">
+                  <Mail className="h-6 w-6 text-white" />
+                  <span className="text-xl font-medium text-white">tomerraz29@gmail.com</span>
+                </div>
+                <a 
+                  href="https://linkedin.com/in/tomer-devops"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-white hover:text-white/80 transition-colors duration-300"
+                >
+                  <Linkedin className="h-6 w-6" />
+                  <span className="text-xl font-medium">LinkedIn</span>
+                </a>
               </div>
             </CardContent>
           </Card>

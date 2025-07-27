@@ -33,6 +33,9 @@ import azureDevopsLogo from "@/assets/logos/azure-devops.svg";
 import yamlLogo from "@/assets/logos/yaml.svg";
 import azureCliLogo from "@/assets/logos/azure-cli.png";
 import cLangLogo from "@/assets/logos/c-lang.svg";
+import bitbucketLogo from "@/assets/logos/bitbucket.svg";
+import gitlabLogo from "@/assets/logos/gitlab.svg";
+import githubLogo from "@/assets/logos/github.svg";
 
 const Skills = () => {
   const skillCategories = [
@@ -90,8 +93,12 @@ const Skills = () => {
     { name: "C", logo: cLangLogo, icon: Code },
     { name: "REST APIs", icon: Database },
     { name: "Git", logo: gitLogo, icon: GitBranch },
+    { name: "GitHub", logo: githubLogo, icon: GitBranch },
+    { name: "GitLab", logo: gitlabLogo, icon: GitBranch },
+    { name: "Bitbucket", logo: bitbucketLogo, icon: GitBranch },
     { name: "Figma", logo: figmaLogo, icon: Palette },
-    { name: "Agile", icon: Users }
+    { name: "Agile Methodologies", icon: Users },
+    { name: "AI Tools", icon: Zap }
   ];
 
   return (

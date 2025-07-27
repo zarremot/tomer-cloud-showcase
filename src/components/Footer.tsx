@@ -25,12 +25,9 @@ const Footer = () => {
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-6 py-12">
 
-        {/* Bottom Bar */}
-        <div className="border-t border-border mt-12 pt-8">
-          <p className="text-muted-foreground text-sm text-center">
-            © {currentYear} Tomer Raz. All rights reserved.
-          </p>
-        </div>
+        <p className="text-muted-foreground text-sm text-center">
+          © {currentYear} Tomer Raz. All rights reserved.
+        </p>
       </div>
     </footer>
   );
