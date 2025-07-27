@@ -103,7 +103,7 @@ const Skills = () => {
 
           {/* Second Row - Moving Left */}
           <div
-            className="flex gap-2 whitespace-nowrap animate-[scroll-left_16s_linear_infinite] md:gap-4 mb-2"
+            className="flex gap-2 whitespace-nowrap animate-[scroll-left_24s_linear_infinite] md:gap-4 mb-2"
             style={{ animationDuration: window.innerWidth < 768 ? '24s' : '50s' }}
           >
             {[...technologies.slice().reverse(), ...technologies.slice().reverse()].map((tech, index) => {
@@ -126,30 +126,32 @@ const Skills = () => {
             })}
           </div>
 
-          {/* Third Row - Moving Right (unique order for mobile) */}
-          <div
-            className="flex gap-2 whitespace-nowrap animate-[scroll-right_12s_linear_infinite] md:gap-4"
-            style={{ animationDuration: window.innerWidth < 768 ? '20s' : '45s' }}
-          >
-            {[...technologies.slice(5), ...technologies.slice(5), ...technologies.slice(0,5), ...technologies.slice(0,5)].map((tech, index) => {
-              const IconComponent = tech.icon;
-              return (
-                <Badge
-                  key={`row3-${index}`}
-                  variant="outline"
-                  className="flex-shrink-0 flex items-center gap-1 px-3 py-1 text-xs md:px-6 md:py-3 md:text-sm max-w-[110px] md:max-w-none truncate"
-                  style={{ minWidth: window.innerWidth < 768 ? '70px' : undefined }}
-                >
-                  {tech.logo ? (
-                    <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
-                  ) : (
-                    <IconComponent className="h-4 w-4" />
-                  )}
-                  <span className="truncate block w-full">{tech.name}</span>
-                </Badge>
-              );
-            })}
-          </div>
+          {/* Third Row - Only show on mobile */}
+          {window.innerWidth < 768 && (
+            <div
+              className="flex gap-2 whitespace-nowrap animate-[scroll-right_20s_linear_infinite] md:gap-4"
+              style={{ animationDuration: '20s' }}
+            >
+              {[...technologies.slice(5), ...technologies.slice(5), ...technologies.slice(0,5), ...technologies.slice(0,5)].map((tech, index) => {
+                const IconComponent = tech.icon;
+                return (
+                  <Badge
+                    key={`row3-${index}`}
+                    variant="outline"
+                    className="flex-shrink-0 flex items-center gap-1 px-3 py-1 text-xs md:px-6 md:py-3 md:text-sm max-w-[110px] md:max-w-none truncate"
+                    style={{ minWidth: window.innerWidth < 768 ? '70px' : undefined }}
+                  >
+                    {tech.logo ? (
+                      <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
+                    ) : (
+                      <IconComponent className="h-4 w-4" />
+                    )}
+                    <span className="truncate block w-full">{tech.name}</span>
+                  </Badge>
+                );
+              })}
+            </div>
+          )}
 
           {/* Gradient overlays for smooth edges */}
           <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-secondary/20 to-transparent pointer-events-none z-10"></div>
