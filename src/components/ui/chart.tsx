@@ -86,13 +86,14 @@ ${colorConfig
     const color =
       itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
       itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
+    // Sanitize color value to prevent CSS injection
+    const safeColor = typeof color === 'string' ? color.replace(/[^#(),a-zA-Z0-9%\s.-]/g, '') : '';
+    return safeColor ? `  --color-${key}: ${safeColor};` : null
   })
   .join("\n")}
-}
 `
           )
-          .join("\n"),
+          .join("\n")
       }}
     />
   )

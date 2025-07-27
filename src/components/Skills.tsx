@@ -38,54 +38,15 @@ import gitlabLogo from "@/assets/logos/gitlab.svg";
 import githubLogo from "@/assets/logos/github.svg";
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Cloud Platforms",
-      skills: [
-        { name: "Microsoft Azure", level: 90 },
-        { name: "Google Cloud Platform", level: 75 },
-        { name: "Azure DevOps", level: 85 }
-      ]
-    },
-    {
-      title: "Infrastructure & Orchestration",
-      skills: [
-        { name: "Terraform", level: 90 },
-        { name: "Docker", level: 70 },
-        { name: "Azure CLI", level: 85 },
-        { name: "PowerShell", level: 80 }
-      ]
-    },
-    {
-      title: "CI/CD & Automation",
-      skills: [
-        { name: "Azure DevOps", level: 90 },
-        { name: "CI/CD Pipelines", level: 85 },
-        { name: "GitOps", level: 80 },
-        { name: "YAML", level: 85 }
-      ]
-    },
-    {
-      title: "Development & Programming",
-      skills: [
-        { name: "React & TypeScript", level: 85 },
-        { name: "Node.js", level: 80 },
-        { name: "REST APIs", level: 85 },
-        { name: "C Programming", level: 75 }
-      ]
-    }
-  ];
 
   const technologies = [
     { name: "Azure", logo: azureLogo, icon: Cloud },
     { name: "GCP", logo: gcpLogo, icon: Globe },
     { name: "Terraform", logo: terraformLogo, icon: Settings },
     { name: "Azure DevOps", logo: azureDevopsLogo, icon: GitBranch },
-    { name: "Docker", logo: dockerLogo, icon: Container },
     { name: "PowerShell", logo: powershellLogo, icon: Terminal },
     { name: "Azure CLI", logo: azureCliLogo, icon: Terminal },
     { name: "YAML", logo: yamlLogo, icon: FileCode },
-    { name: "GitOps", logo: gitAltLogo, icon: GitBranch },
     { name: "Node.js", logo: nodejsLogo, icon: Zap },
     { name: "React", logo: reactLogo, icon: Code },
     { name: "TypeScript", logo: typescriptLogo, icon: Code },
@@ -109,49 +70,82 @@ const Skills = () => {
             Technical Skills
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive toolkit for modern DevOps and cloud engineering challenges
+            All the tools needed for modern cloud development and operations
           </p>
         </div>
 
         {/* Animated Technology Carousel */}
         <div className="relative">
           {/* First Row - Moving Right */}
-          <div className="flex animate-[scroll-right_45s_linear_infinite] gap-4 mb-4 whitespace-nowrap">
+          <div
+            className="flex gap-2 whitespace-nowrap animate-[scroll-right_45s_linear_infinite] md:gap-4 mb-2"
+            style={{ animationDuration: window.innerWidth < 768 ? '28s' : '55s' }}
+          >
             {[...technologies, ...technologies].map((tech, index) => {
               const IconComponent = tech.icon;
               return (
-                <Badge 
+                <Badge
                   key={`row1-${index}`}
-                  variant="outline" 
-                  className="px-6 py-3 text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-card/50 border-primary/20 hover:shadow-primary/20 hover:scale-105 flex-shrink-0 flex items-center gap-2"
+                  variant="outline"
+                  className="flex-shrink-0 flex items-center gap-1 px-3 py-1 text-xs md:px-6 md:py-3 md:text-sm max-w-[110px] md:max-w-none truncate"
+                  style={{ minWidth: window.innerWidth < 768 ? '70px' : undefined }}
                 >
                   {tech.logo ? (
                     <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
                   ) : (
                     <IconComponent className="h-4 w-4" />
                   )}
-                  {tech.name}
+                  <span className="truncate block w-full">{tech.name}</span>
                 </Badge>
               );
             })}
           </div>
 
           {/* Second Row - Moving Left */}
-          <div className="flex animate-[scroll-left_40s_linear_infinite] gap-4 whitespace-nowrap">
+          <div
+            className="flex gap-2 whitespace-nowrap animate-[scroll-left_16s_linear_infinite] md:gap-4 mb-2"
+            style={{ animationDuration: window.innerWidth < 768 ? '24s' : '50s' }}
+          >
             {[...technologies.slice().reverse(), ...technologies.slice().reverse()].map((tech, index) => {
               const IconComponent = tech.icon;
               return (
-                <Badge 
+                <Badge
                   key={`row2-${index}`}
-                  variant="secondary" 
-                  className="px-6 py-3 text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-secondary/50 border-accent/20 hover:shadow-accent/20 hover:scale-105 flex-shrink-0 flex items-center gap-2"
+                  variant="secondary"
+                  className="flex-shrink-0 flex items-center gap-1 px-3 py-1 text-xs md:px-6 md:py-3 md:text-sm max-w-[110px] md:max-w-none truncate"
+                  style={{ minWidth: window.innerWidth < 768 ? '70px' : undefined }}
                 >
                   {tech.logo ? (
                     <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
                   ) : (
                     <IconComponent className="h-4 w-4" />
                   )}
-                  {tech.name}
+                  <span className="truncate block w-full">{tech.name}</span>
+                </Badge>
+              );
+            })}
+          </div>
+
+          {/* Third Row - Moving Right (unique order for mobile) */}
+          <div
+            className="flex gap-2 whitespace-nowrap animate-[scroll-right_12s_linear_infinite] md:gap-4"
+            style={{ animationDuration: window.innerWidth < 768 ? '20s' : '45s' }}
+          >
+            {[...technologies.slice(5), ...technologies.slice(5), ...technologies.slice(0,5), ...technologies.slice(0,5)].map((tech, index) => {
+              const IconComponent = tech.icon;
+              return (
+                <Badge
+                  key={`row3-${index}`}
+                  variant="outline"
+                  className="flex-shrink-0 flex items-center gap-1 px-3 py-1 text-xs md:px-6 md:py-3 md:text-sm max-w-[110px] md:max-w-none truncate"
+                  style={{ minWidth: window.innerWidth < 768 ? '70px' : undefined }}
+                >
+                  {tech.logo ? (
+                    <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
+                  ) : (
+                    <IconComponent className="h-4 w-4" />
+                  )}
+                  <span className="truncate block w-full">{tech.name}</span>
                 </Badge>
               );
             })}
