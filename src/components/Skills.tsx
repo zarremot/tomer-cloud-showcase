@@ -16,6 +16,18 @@ import {
   Zap
 } from "lucide-react";
 
+// Import real logos
+import terraformLogo from "@/assets/logos/terraform.svg";
+import gcpLogo from "@/assets/logos/gcp.svg";
+import gitLogo from "@/assets/logos/git.svg";
+import dockerLogo from "@/assets/logos/docker.svg";
+import nodejsLogo from "@/assets/logos/nodejs.svg";
+import reactLogo from "@/assets/logos/react.svg";
+import typescriptLogo from "@/assets/logos/typescript.svg";
+import javascriptLogo from "@/assets/logos/javascript.svg";
+import figmaLogo from "@/assets/logos/figma.svg";
+import azureLogo from "@/assets/logos/azure.svg";
+
 const Skills = () => {
   const skillCategories = [
     {
@@ -56,23 +68,23 @@ const Skills = () => {
   ];
 
   const technologies = [
-    { name: "Azure", icon: Cloud },
-    { name: "GCP", icon: Globe },
-    { name: "Terraform", icon: Settings },
+    { name: "Azure", logo: azureLogo, icon: Cloud },
+    { name: "GCP", logo: gcpLogo, icon: Globe },
+    { name: "Terraform", logo: terraformLogo, icon: Settings },
     { name: "Azure DevOps", icon: GitBranch },
-    { name: "Docker", icon: Container },
+    { name: "Docker", logo: dockerLogo, icon: Container },
     { name: "PowerShell", icon: Terminal },
     { name: "Azure CLI", icon: Terminal },
     { name: "YAML", icon: FileCode },
     { name: "GitOps", icon: GitBranch },
-    { name: "Node.js", icon: Zap },
-    { name: "React", icon: Code },
-    { name: "TypeScript", icon: Code },
-    { name: "JavaScript", icon: Code },
+    { name: "Node.js", logo: nodejsLogo, icon: Zap },
+    { name: "React", logo: reactLogo, icon: Code },
+    { name: "TypeScript", logo: typescriptLogo, icon: Code },
+    { name: "JavaScript", logo: javascriptLogo, icon: Code },
     { name: "C", icon: Code },
     { name: "REST APIs", icon: Database },
-    { name: "Git", icon: GitBranch },
-    { name: "Figma", icon: Palette },
+    { name: "Git", logo: gitLogo, icon: GitBranch },
+    { name: "Figma", logo: figmaLogo, icon: Palette },
     { name: "Agile", icon: Users }
   ];
 
@@ -100,7 +112,11 @@ const Skills = () => {
                   variant="outline" 
                   className="px-6 py-3 text-sm hover:bg-primary hover:text-primary-foreground hover:border-primary transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-card/50 border-primary/20 hover:shadow-primary/20 hover:scale-105 flex-shrink-0 flex items-center gap-2"
                 >
-                  <IconComponent className="h-4 w-4" />
+                  {tech.logo ? (
+                    <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
+                  ) : (
+                    <IconComponent className="h-4 w-4" />
+                  )}
                   {tech.name}
                 </Badge>
               );
@@ -117,7 +133,11 @@ const Skills = () => {
                   variant="secondary" 
                   className="px-6 py-3 text-sm hover:bg-accent hover:text-accent-foreground transition-all duration-300 cursor-default shadow-lg backdrop-blur-sm bg-secondary/50 border-accent/20 hover:shadow-accent/20 hover:scale-105 flex-shrink-0 flex items-center gap-2"
                 >
-                  <IconComponent className="h-4 w-4" />
+                  {tech.logo ? (
+                    <img src={tech.logo} alt={tech.name} className="h-4 w-4" />
+                  ) : (
+                    <IconComponent className="h-4 w-4" />
+                  )}
                   {tech.name}
                 </Badge>
               );

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -14,10 +14,10 @@ const Contact = () => {
       link: "mailto:tomerraz29@gmail.com"
     },
     {
-      icon: MapPin,
-      label: "Location",
-      value: "Tel Aviv, Israel",
-      link: null
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: "Connect on LinkedIn",
+      link: "https://www.linkedin.com/in/tomer-raz/"
     }
   ];
 
@@ -48,42 +48,26 @@ const Contact = () => {
             </CardHeader>
             <CardContent className="relative z-10 space-y-8">
               {/* Contact Information */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="flex justify-center gap-8">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-center gap-4">
-                    <div className="p-3 rounded-lg bg-white/20">
-                      <info.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-white/80">{info.label}</div>
-                      {info.link ? (
-                        <a 
-                          href={info.link} 
-                          className="font-medium text-white hover:text-white/80 transition-colors"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <div className="font-medium text-white">{info.value}</div>
-                      )}
-                    </div>
-                  </div>
+                  <Button 
+                    key={index}
+                    variant="secondary" 
+                    size="lg"
+                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-white/30 text-white hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                    asChild
+                  >
+                    <a 
+                      href={info.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex items-center gap-2"
+                    >
+                      <info.icon className="h-5 w-5" />
+                      {info.value}
+                    </a>
+                  </Button>
                 ))}
-              </div>
-              
-              {/* Social Links */}
-              <div className="flex justify-center">
-                <Button 
-                  variant="secondary" 
-                  size="lg"
-                  className="bg-white/20 hover:bg-white/30 backdrop-blur-sm border-white/30 text-white hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                  asChild
-                >
-                  <a href="https://www.linkedin.com/in/tomer-raz/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <Linkedin className="h-5 w-5" />
-                    Connect on LinkedIn
-                  </a>
-                </Button>
               </div>
             </CardContent>
           </Card>
